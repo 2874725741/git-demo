@@ -1,0 +1,11 @@
+Git 学习经验
+1、多人一起协作时，当git push 有冲突的时候，
+ 要忽略本地修改的时候，运行git reset --hard后，git pull就成。
+ 要merge的时候，运行git pull ,代码在本地合并，然后再git commit和git push
+2、在服务器上git pull遇到错误1：
+error: Your local changes to the following files would be overwritten by merge: bin/pb_pred.sh
+解决方案：git checkout + 文件名称，然后在git pull
+3、git push 的时候报错，原因是设置了代理，取消代理即可，
+通过: git config --global http.proxy 查询到当前设置了代理，所以要取消这个设置：
+git config --global --unset http.proxy 再查询，已经没有了代理，然后再push上传
+4、git clone时碰到问题，可能是网速慢，可以再克隆一次试试.
